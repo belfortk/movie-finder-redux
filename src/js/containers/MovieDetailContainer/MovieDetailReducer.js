@@ -1,5 +1,8 @@
 const initialState = {
-  movieDetails: null
+  dataResolution: 'UNFETCHED',
+  loading: false,
+  movieDetails: null,
+  error: null,
 };
 
 export default function MovieSearchReducer(store = initialState, action) {
@@ -8,8 +11,9 @@ export default function MovieSearchReducer(store = initialState, action) {
   switch (type) {
     case 'GET_MOVIE_DETAILS_PENDING' : {
       return {
-        ...store,
-        dataResolution: 0
+        ...initialState,
+        loading: true,
+        dataResolution: 'PENDING'
       };
     }
 
@@ -17,14 +21,17 @@ export default function MovieSearchReducer(store = initialState, action) {
       return {
         ...store,
         movieDetails: payload,
-        dataResolution: 1
+        loading: false,
+        dataResolution: 'FULFILLED'
       };
     }
 
     case 'GET_MOVIE_DETAILS_REJECTED': {
       return {
         ...store,
-        dataResolution: 2
+        error: payload.error,
+        loading: false,
+        dataResolution: 'REJECTED'
       };
     }
 

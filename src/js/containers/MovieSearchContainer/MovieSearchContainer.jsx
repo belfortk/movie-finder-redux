@@ -8,23 +8,36 @@ class MovieSearchContainer extends React.Component {
     super(props);
   }
 
+
   render() {
     return (
       <div>
-        <header>
-          <h3> Search for Movies </h3>
+        <div className='jumbotron' style = { { textAlign: 'center'}}>
+          <h3> I'm in the mood to watch... </h3>
+          </div>
+          <div className='row' id='search-row' style = { { margin: '2em' } }>
+
           <SearchFormComponent />
-        </header>
+
+          </div>
+
         <div className="container">
+          <div className='row'>
+          <div className='col-md-3'/>
+          <div className='col-md-6'>
           {this.props.store.movies.map(movie => (
             <ResultsList
               movieTitle={movie.Title}
               releaseYear={movie.Year}
               imgSrc={movie.Poster}
               movieID={movie.imdbID}
+              key={movie.imdbID}
             />
           ))}
+           </div>
+          <div className='col-md-3'/>
         </div>
+      </div>
       </div>
     );
   }

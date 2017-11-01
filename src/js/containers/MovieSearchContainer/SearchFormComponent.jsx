@@ -21,7 +21,7 @@ class SearchFormComponent extends React.Component {
 
 
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const { dispatch } = this.props;
     dispatch(actions.getMovieSearchResults(this.state.searchParam));
   }
@@ -29,7 +29,7 @@ class SearchFormComponent extends React.Component {
   render() {
     return (
       <form className="form-inline" onSubmit={ this.handleSubmit }>
-        <input type="text" className="form-control " placeholder="Search movies by title" onChange={ this.handleChange } />
+        <input type="text" className="form-control" placeholder="Search movies by title" onChange={ this.handleChange } />
         <button type="submit" className="btn btn-primary" >
           Submit
         </button>

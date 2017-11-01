@@ -17,8 +17,6 @@ export function getMovieDetails(id){
   return {
     type: 'GET_MOVIE_DETAILS',
     payload: axios.get('http://www.omdbapi.com/?apikey=8730e0e&i=' + id)
-    .then((response) => {
-      window.location = '/#/movie/' + id;
-      return response.data; })
+    .then(response => response.data)
   };
 }
