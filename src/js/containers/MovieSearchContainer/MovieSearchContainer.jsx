@@ -21,10 +21,9 @@ class MovieSearchContainer extends React.Component {
 
           </div>
 
-        <div className="container">
+        <div className="container" id='result-contatiner'>
           <div className='row'>
-          <div className='col-md-3'/>
-          <div className='col-md-6'>
+          <div className='col-md-12'>
           {this.props.store.movies.map(movie => (
             <ResultsList
               movieTitle={movie.Title}
@@ -35,7 +34,6 @@ class MovieSearchContainer extends React.Component {
             />
           ))}
            </div>
-          <div className='col-md-3'/>
         </div>
       </div>
       </div>

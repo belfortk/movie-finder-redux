@@ -20,7 +20,7 @@ class ResultsList extends React.Component {
   render() {
     return (
       <div className="row movie-result-item" style={{ margin: "2em" }}>
-        <div className="movie-result">
+        <div className="col-md-12 movie-result">
           <img src={this.props.imgSrc} alt={this.props.movieTitle + " poster image"} style={{ marginBottom: "1em" }} />
           <h4>{this.props.movieTitle}</h4>
           <p>{this.props.releaseYear}</p>
