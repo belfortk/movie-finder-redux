@@ -33,7 +33,7 @@ class MovieSearchContainer extends React.Component {
         </div>
 
         <div className="container" id="result-contatiner">
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md-12">
               {this.props.store.movies.map(movie => (
                 <ResultsList
@@ -45,13 +45,13 @@ class MovieSearchContainer extends React.Component {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
           <div className="row">
             <div className="col-md-12">
+              { this.props.store.movies.length != 0 &&
               <Slider {...settings} id="slider">
-                {this.props.store.movies.map(movie => (
-                  <div>
-                  <ResultsList
+                {this.props.store.movies.map((movie, index) => {
+                  return <div data-index={index}><ResultsList
                     movieTitle={movie.Title}
                     releaseYear={movie.Year}
                     imgSrc={movie.Poster}
@@ -59,8 +59,9 @@ class MovieSearchContainer extends React.Component {
                     key={movie.imdbID}
                   />
                   </div>
-                ))}
+                })}
               </Slider>
+              }
             </div>
           </div>
         </div>

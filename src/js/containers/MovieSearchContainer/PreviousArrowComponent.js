@@ -5,7 +5,7 @@ function SamplePrevArrow(props) {
   return (
     <button
       className={className}
-      style={{...style, display: 'block', background: 'green'}}
+      style={{...style, display: 'block', background: 'red'}}
       onClick={onClick}
     >PREVIOUS</button>
   );

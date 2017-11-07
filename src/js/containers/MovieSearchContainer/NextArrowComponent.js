@@ -2,7 +2,7 @@ import React from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
-  return <div className={className} style={{ ...style, display: "block", background: "grey" }} onClick={onClick} />;
+  return <div className={className} style={{ ...style, display: "block", background: "red" }} onClick={onClick} />;
 }
 
 export default SampleNextArrow;

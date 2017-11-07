@@ -21,7 +21,7 @@ class ResultsList extends React.Component {
     return (
       <div className="movie-result-item" style={{ margin: "2em" }}>
         <div className="movie-result">
-          <img src={this.props.imgSrc} alt={this.props.movieTitle + "poster image"} style={{ marginBottom: "1em" }} />
+          <img src={this.props.imgSrc} alt={'  no image found =(... '} style={{ marginBottom: "1em" }} />
           <h4>{this.props.movieTitle}</h4>
           <p>{this.props.releaseYear}</p>
           {/* <a href={ '#/movie/' + this.props.movieID }> */}
